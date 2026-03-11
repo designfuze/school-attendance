@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+
+<h2>Attendance Dashboard</h2>
+
+<table id="attendanceTable">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Date</th>
+<th>Time</th>
+<th>Latitude</th>
+<th>Longitude</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+<button onclick="exportExcel()">Download Excel</button>
+
+<script src="firebase.js"></script>
+
+<script>
+
+const tableBody = document.querySelector("tbody")
+
+db.collection("attendance").get().then((snapshot)=>{
+
+snapshot.forEach(doc=>{
+
+let d = doc.data()
+
+let row = `
+<tr>
+<td>${d.name}</td>
+<td>${d.date}</td>
+<td>${d.time}</td>
+<td>${d.lat}</td>
+<td>${d.lng}</td>
+</tr>
+`
+
+tableBody.innerHTML += row
+
+})
+
+})
+
+function exportExcel(){
+
+let table = document.getElementById("attendanceTable")
+
+let html = table.outerHTML
+
+let url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html)
+
+location.href = url
+
+}
+
+</script>
+
+</body>
+</html>
