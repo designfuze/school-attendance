@@ -1,0 +1,41 @@
+body{
+font-family: Arial;
+background:#0D0D0D;
+color:white;
+text-align:center;
+}
+
+.container{
+padding:20px;
+}
+
+input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:80%;
+}
+
+button{
+background:#D90429;
+color:white;
+border:none;
+padding:12px;
+margin:10px;
+border-radius:8px;
+}
+
+video{
+width:250px;
+border-radius:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #444;
+padding:10px;
+}
