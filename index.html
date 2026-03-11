@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Junior New Delhi Public School Attendance</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Junior New Delhi Public School</h1>
+<p>Staff Attendance System</p>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<hr>
+
+<h3>Mark Attendance</h3>
+
+<video id="video" autoplay></video>
+<button onclick="capture()">Capture Selfie</button>
+
+<canvas id="canvas"></canvas>
+
+<button onclick="markAttendance()">Submit Attendance</button>
+
+<p id="status"></p>
+
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
